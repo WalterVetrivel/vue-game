@@ -1,0 +1,145 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Caveat', cursive;
+	background-image: linear-gradient(to bottom right, #353a47, #885a5a, #84b082);
+	min-height: 100vh;
+	padding: 0.5rem;
+}
+
+.container {
+	width: 100%;
+	min-height: 90vh;
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 0.5rem;
+	border-radius: 4px;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.points-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 1rem;
+}
+
+.points {
+	flex-basis: 100%;
+	text-align: center;
+	padding: 0.5rem;
+}
+
+.points h1 {
+	margin-bottom: 0.5rem;
+}
+
+.points-bar-outer {
+	width: 100%;
+	background-color: #f7c1bb;
+	border-radius: 4px;
+	overflow: hidden;
+	height: 2rem;
+	position: relative;
+}
+
+.points-bar-inner {
+	width: 100%;
+	height: 100%;
+	background-color: #84b082;
+}
+
+.points-indicator {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.25rem;
+}
+
+.controls-container {
+	background-color: #f7c1bb;
+	min-height: 12%;
+	margin-bottom: 1rem;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.messages-container {
+	background-color: hsl(223, 15%, 24%);
+	color: #fff;
+	width: 100%;
+	height: 53vh;
+	border-radius: 4px;
+	overflow-y: scroll;
+}
+
+.btn {
+	border: 0;
+	outline: none;
+	font-family: inherit;
+	font-size: 1.5rem;
+	font-weight: bold;
+	padding: 0.5rem;
+	border-radius: 4px;
+	cursor: pointer;
+	margin: 0.5rem;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+	filter: brightness(1.25);
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.btn-start {
+	background-color: #84b082;
+	color: #353a47;
+}
+
+.btn-control {
+	background-color: #885a5a;
+	color: #fff;
+}
+
+.message {
+	padding: 0.75rem;
+	font-size: 1.75rem;
+}
+
+.message.player {
+	color: #84b082;
+}
+
+.message.opponent {
+	color: #dc136c;
+}
+
+@media only screen and (min-width: 992px) {
+	body {
+		padding: 2rem;
+	}
+
+	.container {
+		padding: 1rem;
+	}
+
+	.points {
+		flex-basis: 50%;
+	}
+
+	.controls-container,
+	.messages-container {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.controls-container {
+		margin-bottom: 1rem;
+	}
+}

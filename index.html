@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+		<link
+			href="https://fonts.googleapis.com/css?family=Caveat:400,700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Race to Zero</title>
+	</head>
+	<body>
+		<div class="container" id="app">
+			<div class="points-container">
+				<div class="points player-points">
+					<h1>You</h1>
+					<div class="points-bar-outer">
+						<h3 class="points-indicator">{{ playerPoints }}</h3>
+						<div class="points-bar-inner" :style="playerPointsWidth"></div>
+					</div>
+				</div>
+				<div class="points opponent-points">
+					<h1>Opponent</h1>
+					<div class="points-bar-outer">
+						<h3 class="points-indicator">{{ opponentPoints }}</h3>
+						<div class="points-bar-inner" :style="opponentPointsWidth"></div>
+					</div>
+				</div>
+			</div>
+			<div class="controls-container">
+				<button class="btn btn-start" v-if="!gameStarted" @click="startGame">
+					Start Game
+				</button>
+				<template v-else>
+					<button class="btn btn-control" @click="normalReduce">Reduce</button>
+					<button class="btn btn-control" @click="specialReduce">
+						Special Reduce
+					</button>
+					<button class="btn btn-control" @click="gainPoints">Gain</button>
+					<button class="btn btn-control" @click="resign">Resign</button>
+				</template>
+			</div>
+			<div class="messages-container">
+				<p v-for="message in messages" class="message" :class="message.type">
+					&gt;&nbsp;{{ message.message }}
+				</p>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
